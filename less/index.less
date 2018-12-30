@@ -1,0 +1,262 @@
+// 导入初始化代码
+@import './base.less';
+/* 头部区域的样式 */
+
+#header {
+    width: 100vw;
+    height: 0.45rem;
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    .icon-logo {
+        width: 0.799rem;
+        height: 0.45rem;
+        padding: 0.079rem 0.11rem;
+        background-size: 2rem 2rem;
+        background-image: url('../images/sprites.png');
+        background-position: 0 -1.08rem;
+        background-origin: content-box;
+        background-clip: content-box;
+    }
+    form {
+        flex: 1;
+        margin-top: 0.05rem;
+        position: relative;
+        .icon-rearch {
+            width: 0.2rem;
+            height: 0.2rem;
+            position: absolute;
+            background-image: url('../images/sprites.png');
+            background-position: -0.6rem -1.08rem;
+            background-size: 2.002rem 2.002rem;
+            top: 0.018rem;
+            left: 0.086rem;
+        }
+        input {
+            width: 100%;
+            flex: 1;
+            font-size: 0.126rem;
+            height: 0.252rem;
+            border-radius: 0.176rem;
+            padding-left: 0.36rem;
+        }
+    }
+    .login {
+        width: 0.5rem;
+        height: 0.36rem;
+        color: #fff;
+        font-size: 0.14rem;
+        text-align: center;
+        line-height: 0.36rem;
+    }
+}
+
+//轮播图
+#slide {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                a {
+                    img {
+                        width: 100vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//导航
+#nav {
+    background-color: #fff;
+    padding: 0.1rem;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            text-align: center;
+            width: 25%;
+            a {
+                display: block;
+                img {
+                    width: 0.4rem;
+                    height: 0.4rem;
+                }
+                p {
+                    font-size: 0.14rem;
+                    padding: 0.05rem 0;
+                }
+            }
+        }
+    }
+}
+
+//主体
+#main {
+    padding: 0.101rem; //秒杀
+    .seckill {
+        border: 0.01rem solid #ccc;
+        box-shadow: 0rem 0rem 0.02rem #ccc;
+        background-color: #fff; //秒杀标题
+        .seckill-title {
+            width: 100%;
+            height: 0.299rem;
+            line-height: 0.299rem;
+            .seckill-icon {
+                width: 0.202rem;
+                height: 0.248rem;
+                margin-left: 0.05rem;
+            }
+            .seckill-name {
+                font-size: 0.14rem;
+                color: red;
+                padding: 0 0.108rem;
+            }
+            .seckill-time {
+                i {
+                    font-size: 0.14rem;
+                    font-style: normal;
+                    &:not(:nth-child(3n)) {
+                        padding: 0 0.036rem;
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            .seckill-more {
+                font-size: 0.14rem;
+                margin-right: 0.05rem;
+                float: right;
+            }
+        } //秒杀商品
+        .seckill-content {
+            padding: 0.101rem 0;
+            ul {
+                display: flex;
+                width: 100%;
+                li {
+                    // width: 33%;
+                    flex: 1;
+                    a {
+                        text-align: center;
+                        display: block;
+                        img {
+                            width: 1.098rem;
+                            height: 1.098rem;
+                        }
+                        p {
+                            
+                            color: rgb(242, 2, 22);
+                            font-size: 0.119rem;
+                        }
+                        del {
+                            font-size: 0.119rem;
+                        }
+                    }
+                    &:nth-child(2) {
+                        border-left: 0.01rem solid #ccc;
+                        border-right: 0.01rem solid #ccc;
+                    }
+                }
+            }
+        }
+    } // 商品
+    .jd-market {
+        background-color: #fff;
+        margin-top: 0.097rem; // height: 5.767rem;
+        border: 0.01rem solid #ccc;
+        .jd-market-title {
+            height: 0.299rem;
+            line-height: 0.299rem;
+            border-bottom: 0.01rem solid #ccc;
+            position: relative;
+            h4 {
+                font-weight: 400;
+                padding-left: 0.198rem;
+                &::before {
+                    content: ' ';
+                    width: 0.05rem;
+                    height: 0.151rem;
+                    background-color: red;
+                    position: absolute;
+                    left: 0.1rem;
+                    top: 0.07rem;
+                }
+            }
+        }
+        .jd-market-content {
+            display: flex; // border-bottom: 2.8px solid #ccc;
+            .left {
+                a {
+                    display: block;
+                    img {
+                        width: 1.724rem;
+                        height: 1.868rem;
+                        border-right: 0.01rem solid #ccc;
+                    }
+                }
+            }
+            .right {
+                a {
+                    display: block;
+                    &:first-child {
+                        border-bottom: 0.01rem solid #ccc;
+                    }
+                    img {
+                        width: 1.667rem;
+                        height: 0.917rem;
+                    }
+                }
+            }
+        }
+    }
+    .jd-hot {
+        background-color: #fff;
+        margin-top: 0.097rem; // height: 5.767rem;
+        border: 0.01rem solid #ccc;
+        .jd-hot-title {
+            height: 0.299rem;
+            line-height: 0.299rem;
+            border-bottom: 0.01rem solid #ccc;
+            position: relative;
+            h4 {
+                font-weight: 400;
+                padding-left: 0.198rem;
+                &::before {
+                    content: ' ';
+                    width: 0.05rem;
+                    height: 0.151rem;
+                    background-color: red;
+                    position: absolute;
+                    left: 0.1rem;
+                    top: 0.07rem;
+                }
+            }
+        }
+        .jd-hot-content {
+            display: flex;
+            .left {
+                a {
+                    display: block;
+                    &:first-child {
+                        border-bottom: 0.01rem solid #ccc;
+                    }
+                    img {
+                        width: 1.667rem;
+                        height: 0.917rem;
+                    }
+                }
+            }
+            .right {
+                a {
+                    display: block;
+                    img {
+                        width: 1.699rem;
+                        height: 1.84rem;
+                        border-right: 0.01rem solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+}
