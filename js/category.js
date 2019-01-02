@@ -1,7 +1,7 @@
 window.onresize = function () {
     PxRem();
 }
-PxRem();
+
 //自动设置跟字体大小
 function PxRem(){
     var docEl = document.documentElement;
@@ -12,6 +12,7 @@ function PxRem(){
 }
 
 window.onload = function  (){
+    PxRem();
     var swiper = new Swiper('.category-left .swiper-container', {
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -44,18 +45,25 @@ window.onload = function  (){
 
           e.target.parentNode.classList.add('active');
           var translateY = e.target.parentNode.dataset['index'] * liHeight;
-          var swiperWrapperHeight = document.querySelector('.category-left .swiper-wrapper').offsetHeight;
-          var ulHeight = leftList.offsetHeight;
+          console.log(translateY);
+          var swiperWrapper  = document.querySelector('.category-left .swiper-wrapper');
+          
+          var swiperWrapperHeight = swiperWrapper.offsetHeight;
+          console.log(swiperWrapperHeight);
+          
+          var ulHeight = leftUl.offsetHeight;
           var maxTranslateY = swiperWrapperHeight - ulHeight;
+          console.log(maxTranslateY);
+          
           // 3.3 判断当前位移值 是否小于了最大位移值 设置为最大位移值
           if(translateY < maxTranslateY){
               // 3.4 如果小于就设置为最大位移值
               translateY = maxTranslateY;
           }
           // 4. 给当前swiper-wrapper 容器设置translate3d设置位移 注意带px单位
-          swiperWrapper.style.transform = 'translate3d(0px, '+translateY+'px, 0px)';
+          swiperWrapper.style.transform = 'translate3d(0px, '+(-(translateY/100))+'rem, 0px)';
           // 5. 给位移的swiper-wrapper 添加过渡效果
-          swiperWrapper.style.transition = 'all 0.3s';
+          swiperWrapper.style.transition = 'all 0.6s';
       });
       
       
